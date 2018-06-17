@@ -5,3 +5,6 @@
 # Radio
 ro.telephony.default_network=22
 telephony.lteOnGsmDevice=1
+
+# Wide cam for all
+vendor.camera.aux.packagelist=all
