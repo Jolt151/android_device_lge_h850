@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,18 +22,17 @@ DEVICE_PATH := device/lge/h850
 
 TARGET_OTA_ASSERT_DEVICE := g5,h1,h850
 
-# Override this after to inheriting g5 common size
-# H850 system image partition is sized differently than US
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4685037568
-
 # exfat
 TARGET_EXFAT_DRIVER := exfat
 
 # Kernel
 TARGET_KERNEL_CONFIG := lineageos_h850_defconfig
 
-# Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+# Partitions
+# Override this after inheriting g5 common size
+# h850 system image partition is sized differently than US variants
+BOARD_CACHEIMAGE_PARTITION_SIZE := 536870912
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4148166656
 
 # inherit from the proprietary version
 -include vendor/lge/h850/BoardConfigVendor.mk
